@@ -28,8 +28,8 @@ passing "--enable-prefetch" to configure.
 
 Known issues:
 
-  - GCC 7.4.0 (and perhaps newer versions) fails to compile
-the simple fix is to compile the library with ealrier version of
+  - GCC 7.4.0 (and perhaps newer versions) fails to compile.
+A simple fix is to compile the library with ealrier version of
 gcc and g++, as proposed here using GCC 5.5.0
 
   - GCC 4.0.2 (and perhaps earlier versions) has a known bug in
