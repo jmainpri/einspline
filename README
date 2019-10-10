@@ -10,9 +10,11 @@ it has specialized routines to speed the calculations.
 Building
 --------
 einspline is built with the standard autotools sequence:
-1)  ./configure --option1 ...
-2)  make
-3)  make install
+1)  autoreconf -i
+2)  mkdir build && cd build
+3)  ../configure --prefix=/usr/local CXX=g++-5 CC=gcc-5
+4)  make
+5)  make install
 
 Options
 -------
@@ -25,8 +27,14 @@ passing "--enable-prefetch" to configure.
 
 
 Known issues:
-   GCC 4.0.2 (and perhaps earlier versions) has a known bug in
+
+  - GCC 7.4.0 (and perhaps newer versions) fails to compile
+the simple fix is to compile the library with ealrier version of
+gcc and g++, as proposed here using GCC 5.5.0
+
+  - GCC 4.0.2 (and perhaps earlier versions) has a known bug in
 generating optimized SSE code on 32-bit machines.  The results of
 using the SSE version may not be correct.  We suggest upgrading to the
 4.1 or 4.2 line of gcc or using the Intel compiler, which is free on
 Linux for noncommercial use.  Alternatively, disable the SSE routines.
+
